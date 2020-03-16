@@ -1,14 +1,15 @@
 ---
 layout: post
-title:      "**Weather-Forecast Ruby CLI Gem**"
+title:      "Weather-Forecast Ruby CLI Gem"
 date:       2020-03-16 00:57:52 +0000
 permalink:  weather-forecast_ruby_cli_gem
 ---
 
 
+
 This week I completed my first CLI project using ruby as tasked by Flatironschool software engineering program. The project requires us to build a CLI that provides access to data from the web, collect the data and save it into an object. We were also required to go at least one level deep.
 After wandering on the web for ideas and looking for good free API to collect the data from, I decided to build a simple Weather gem because Who doesn’t like a forecast update?
-https://gph.is/2diuzwf
+
 
 Well at least, that the first thing I do before getting out, CHECK THE WEATHER!!
 Working with API for the first time was quite a challenge. Geez… the amount of time I spent on the web to teach myself.
@@ -35,7 +36,8 @@ Next, I decided to display forecast to user in a 24hrs period. So I had to divid
 
  
 Ouf! The hard work was done. 
-https://gph.is/2roKEH4
+
+<div style="width:100%;height:0;padding-bottom:46%;position:relative;"><iframe src="https://giphy.com/embed/3ohzdIuqJoo8QdKlnW" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/reactionseditor-yes-awesome-3ohzdIuqJoo8QdKlnW">via GIPHY</a></p>
 
 All I had to do at this point was to transfer the collected data into my CLI, and used some styling gem like Colorize or Figlet  to improve the user experience. 
 Although I am happy with the end result, This CLI can be further refactored.  
