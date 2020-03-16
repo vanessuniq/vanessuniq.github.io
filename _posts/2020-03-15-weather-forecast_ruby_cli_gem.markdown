@@ -71,8 +71,8 @@ Well, I thank the creator of TTY-Prompt. This is a life savior. This gem improve
 I use the following code for my menu:
 
 prompt = TTY::Prompt.new
-@options = %w(Exit Check-Another-Area Next-Day-Forecast Next-2-Days-Forecast Next-3-Days-Forecast Next-4-Days-Forecast)</strong></h5>
-@selection = prompt.select("What would you like to do next?, @options)
+@options = %w(Exit Check-Another-Area Next-Day-Forecast Next-2-Days-Forecast Next-3-Days-Forecast Next-4-Days-Forecast)
+@selection = prompt.select("What would you like to do next?", @options)
 
   After creating an instance of prompt, we use the select method on the prompt and passig it 2 arguments: the question to be asked and the list of options. and our result from the prompt: 
   
