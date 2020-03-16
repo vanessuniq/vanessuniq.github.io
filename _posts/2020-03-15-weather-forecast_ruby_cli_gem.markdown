@@ -21,19 +21,20 @@ Well, it Paid off!!
  <button type="submit">Check My Code Here!</button>
 </form>
 
-<h2><strong>App Description</srong></h2>
+**App Description**
 
 My app allows user to get a weather update by zip code. It provides a 24 hour forecast, detailing it every 3 hours. I used the OpenWeatherMap API to collect my data, which was returned in a JSON format. It was not difficult to work with JSON as I know how to operate on hashes or array with Ruby.
 
-<h2><strong>Project Outline / Step</strong></h2>
+**Project Outline / Step**
 
-<h3><strong>Fetching data from the Web using OpenWeatherMap API</strong></h3>
+**Fetching data from the Web using OpenWeatherMap API**
 
 The app prompt the user to enter a zip code. Once a valid zip code is retrieved, the app used HTTParty gem to query the web and JSON parser to parse the response which will then be used to provides user requested data. The easiest way to learn how a gem works is by reading the README. It literally tells you how to use the gem. Well, you can always google everything…, But seriously, go to the source
  
- ![querying the web code](https://user-images.githubusercontent.com/46642178/76722865-c4196d00-671b-11ea-963c-66073eef4c61.png)
+ ![image](https://user-images.githubusercontent.com/46642178/76722865-c4196d00-671b-11ea-963c-66073eef4c61.png)
 
-<h3><strong>Collecting Data into Objects</strong></h3>
+**Collecting Data into Objects**
+
 Next I used the skills learned during this first part of the program at Flatironschool to collect data into objects. The response from the API provided 40 data points enclosed in an array. The data points in the main array were either hashes or arrays. Those data points represent weather data every 3 hours for 5 days.  I used iteration to collect the details I needed for my app, as well as the built in Ruby class Struct . A struct is useful in terms of producing value objects which store related attributes together. 
  
 ![image](https://user-images.githubusercontent.com/46642178/76723090-7a7d5200-671c-11ea-9c67-a36afdaeb71b.png)
@@ -52,7 +53,7 @@ Ouf! The hard work was done.
 
 <div style="width:100%;height:0;padding-bottom:46%;position:relative;"><iframe src="https://giphy.com/embed/3ohzdIuqJoo8QdKlnW" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/reactionseditor-yes-awesome-3ohzdIuqJoo8QdKlnW">via GIPHY</a></p>
 
-<h3><strong>CLI Time</strong></h3>
+**CLI Time**
 
 All I had to do at this point was to transfer the collected data into my CLI, and used some styling gem like <strong><i>Colorize</i></strong>, <strong><i>TTY</i></strong> or <strong><i>ruby_Figlet</i></strong>  to improve the user experience. 
 Upon execution, the app starts with a banner 'Weather-Forecast' that was obtained using the <i>ruby_figlet</i> gem. This is a useful and simple ruby gem for font interpretation and printing. You can check the installation and usage of any these useful gems on their github repository, checking the README file.  This gem has many font I encourageto checkout for your CLI. I used the simple one shown bellow:
@@ -85,7 +86,7 @@ I use the following code for my menu:
 
 Although I am happy with the end result, my project can be further refactored.  
 
-<h3><strong>My TO DO List:</strong></h3>
+**My TO DO List:**
 
 1.	Hide my API keys
 2.	Possibly add some emoji and more style
