@@ -15,7 +15,7 @@ Working with API for the first time was quite a challenge. Geez… the amount of
 
 Well, it Paid off!!
 
-Check my code here: https://github.com/vanessuniq/weather-forecast
+ <button><a href="https://github.com/vanessuniq/weather-forecast">Check my code here:</a></button>
 
 **App Description**
 
@@ -72,7 +72,7 @@ I use the following code for my menu:
 
 prompt = TTY::Prompt.new
 @options = %w(Exit Check-Another-Area Next-Day-Forecast Next-2-Days-Forecast Next-3-Days-Forecast Next-4-Days-Forecast)</strong></h5>
-@selection = $prompt.select("What would you like to do next?, @options)
+@selection = prompt.select("What would you like to do next?, @options)
 
   After creating an instance of prompt, we use the select method on the prompt and passig it 2 arguments: the question to be asked and the list of options. and our result from the prompt: 
   
