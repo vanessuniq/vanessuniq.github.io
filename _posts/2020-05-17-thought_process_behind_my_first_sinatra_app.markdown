@@ -171,7 +171,9 @@ Add your routes, add create their corresponding pages to display in the views fo
 
 ![](https://lh3.googleusercontent.com/vYKTmH-2g9FQN7jBc2RqA6Zifc7NZl2I73ms1CKAnwiF5nca1GYEeug2kcF_lrBVYgwvn5jbrBJGd47wKW4ROzNyf9jBUTZMMK826IdH7FWYcuzMzfqOTRmIYiSypP1a4k-ZljhG)
 
-Check my code here: [](https://github.com/vanessuniq/get-fit-sinatra-app)
+<a href="https://github.com/vanessuniq/get-fit-sinatra-app">Check my code here!</a>
+
+
 
 Keep up the momentum!!
 
