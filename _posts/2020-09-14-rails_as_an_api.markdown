@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "RAILS AS AN API"
-date:       2020-09-14 18:44:27 +0000
+date:       2020-09-14 14:44:27 -0400
 permalink:  rails_as_an_api
 ---
 
@@ -61,11 +61,11 @@ We should always drop into the rails console (by running *// ♥  rails c* in th
 
 ![image](https://user-images.githubusercontent.com/46642178/93112752-5cba8680-f686-11ea-8666-99b2c6ce15f9.png)
 
-I also seeded the database with some dummy data  using the gem “faker” for further test of the app. Simply add the gem to the Gemfile, then run  /*/ ♥  bundle install *in the terminal and you will be set to use the gem. Check https://github.com/faker-ruby/faker for more instruction on how to use the gem. 
+I also seeded the database with some dummy data  using the gem “faker” for further test of the app. Simply add the gem to the Gemfile, then run  /*/ ♥  bundle install *in the terminal and you will be set to use the gem. Check [https://github.com/faker-ruby/faker](http://) for more instruction on how to use the gem. 
 
 **b.	View** 
 
-This directory is not necessary, as no page needs to be rendered on the web. Our backend API will pass data to the front-end using json (JavaScript Object Notation) format. Json  is a human readable data interchange format used for representing data structures and objects in the browser. Rendering data in json format will be done by invoking render json at the bottom of the action controllers that are meant to submit data to the front-end side. Plus, I used a serialization to help turning rails object into json format. The serializer I used is called fast_jsonapi. To use it, add gem ‘fast_jsonapi’ to the Gemfile then bundle install in the terminal. Learn more about the gem at https://github.com/Netflix/fast_jsonapi .
+This directory is not necessary, as no page needs to be rendered on the web. Our backend API will pass data to the front-end using json (JavaScript Object Notation) format. Json  is a human readable data interchange format used for representing data structures and objects in the browser. Rendering data in json format will be done by invoking render json at the bottom of the action controllers that are meant to submit data to the front-end side. Plus, I used a serialization to help turning rails object into json format. The serializer I used is called fast_jsonapi. To use it, add gem ‘fast_jsonapi’ to the Gemfile then bundle install in the terminal. Learn more about the gem at [https://github.com/Netflix/fast_jsonapi](http://) .
 To create a serializer for each model,  run *// ♥  rail g serializer modelname* . This command will create a serializer folder in the project app directory, and include the model serializer file (app/serializer/model_serializer.rb.
 
 ![image](https://user-images.githubusercontent.com/46642178/93120299-246c7580-f691-11ea-930d-99fcd9c62497.png)
@@ -100,4 +100,6 @@ It’s time to fire up the server by running *// ♥  rails s *  and hit one of 
 Going to **localhost:3000/questions**, we get the following in the browser:
 
 ![image](https://user-images.githubusercontent.com/46642178/93123298-dd34b380-f695-11ea-8ae2-b10dcb737c72.png)
+
+CHECK THE CODE REPOSITORY  <a href="https://github.com/vanessuniq/qa-engine/tree/master/qa-engine-backend">HERE</a>
 
