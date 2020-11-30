@@ -1,7 +1,7 @@
 ---
 layout: post
-title:      "Simple Fullstack CRUD App With Rails, React &Redux"
-date:       2020-11-19 03:35:05 +0000
+title:      "Simple Fullstack CRUD App With Rails, React &Redux Part 1"
+date:       2020-11-18 22:35:06 -0500
 permalink:  simple_fullstack_crud_app_with_rails_react_and_redux
 ---
 
@@ -16,7 +16,7 @@ We will be using a basic approach to implement  <span style="color:red"> JSON We
 
 ### 	Rails API
 
-The complete code for my rails API can be found <a href= 'https://github.com/vanessuniq/rails-qa-engine-api' style="color:indigo; font-size:16px">here</a>.
+The complete code for my rails API can be found <a href=’ https://github.com/vanessuniq/rails-qa-engine-api’ style=”color:indigo; font-size:16px”>here</a>.
 
 Run the following on your terminal to create your rails api:
 ```
