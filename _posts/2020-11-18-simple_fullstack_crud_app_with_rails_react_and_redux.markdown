@@ -10,7 +10,7 @@ permalink:  simple_fullstack_crud_app_with_rails_react_and_redux
 
 <div>The app demonstrates basic user authentication with <span style="color:red">**JWT authentication**</span> and **CRUD **(Create, Read, Update, Delete) functionality, as well as couple extra features like filter, flash message and reaction buttons. We will be working with three models: User, Question, and Answer. This guide is divided into three parts.  Part 1 will cover implementing user registration, login and logout functionality in the server (Rails API) with JWT, part 2 will cover auth using JWT in the client side (React + Redux), and part 3 will cover the creating, reading , updating and deleting a question.</div>
 
-## Part 1: User Authentication
+## Part 1: User Authentication in Rails
 
 We will be using a basic approach to implement  <span style="color:red"> JSON Web Tokens</span> <strong>(JWT)</strong>, setting up both our rails API and React to handle the generated tokens.
 
