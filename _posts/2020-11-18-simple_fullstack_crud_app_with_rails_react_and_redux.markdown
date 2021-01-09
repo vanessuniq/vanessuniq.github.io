@@ -16,7 +16,7 @@ We will be using a basic approach to implement  <span style="color:red"> JSON We
 
 ### 	Rails API
 
-The complete code for my rails API can be found <a href=’ https://github.com/vanessuniq/rails-qa-engine-api’ style=”color:indigo; font-size:16px”>here</a>.
+The complete code for my rails API can be found <a href="https://github.com/vanessuniq/rails-qa-engine-api" style=”color:indigo; font-size:16px”>here</a>.
 
 Run the following on your terminal to create your rails api:
 ```
