@@ -52,7 +52,7 @@ As a refresher, here is the flow for registration:
 As we use Redux for our state management, do not forget to add `redux` and `react-redux` to your dependencies. `yarn add redux react-redux`
 Our signup form is a controlled class component. Once the form is submitted, the app will run a fetch  post request to the API in the `userAction.js` file, making use of Redux’ thunk for the asynchronous request (make sure you have the thunk middleware installed).  A simple signup form component  looks like this:
 
-```jsx
+```js
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {register} from '../actions/userActions';
@@ -197,7 +197,7 @@ When handling the LOGIN_USER action, the reducer first checks if the user alread
 
 **2. User Login** <br/>
 
-User login and signup have similar functionalities. Here is the sample from the Login component:<br/>
+User login and signup have similar functionalities. Here is the sample from the Login component:
 
 ```jsx
 import React, {Component} from 'react';
@@ -254,13 +254,15 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(null, mapDispatchToProps)(Login);
+
 ```
 
 Here, the user submits the his/her login credentials by submitting the form. The submission event triggers the dispatch of the `login thunk` that will send a post request to the server (/api/v1/login endpoint). The server will then authenticate the user credentials and generate a JWT if validated, then send an object containing the JWT and user back to the client as seen in the sign up process. As seen before, the JWT will be stored in the browser local storage and the `LOGIN_USER` action will be dispatched to the user reducer to set the current user in the Redux store.
 
-Here is the code for the login thunk in userActions.js:<br/>
+Here is the code for the login thunk in userActions.js:
 
 ```js
+
 export const login = user => {
   return dispatch => {
     return fetch("http://localhost:3000/api/v1/login", {
@@ -282,14 +284,16 @@ export const login = user => {
       })
   }
 }
+
 ```
 
 **3. User Auto Login** <br/>
 
 We set up the locale storage to persist a user session for when he/she revisits the page and wants to submit authorized requests to the server. So it is logical to try to auto login the user once the app loads and everytime it is accessed. To do so, we will dispatch the getProfile thunk  in the `componentDidMount` method of our App component. Once dispatched, the `getProfile` thunk will first check if there’s an existing token stored in the locale storage. If the token is present, it will run `fetch` sending a get request to the server (/api/v1/auto_login  endpoint) with an <p style="color:brown ">Authorization header</p> carrying the token. The Rails server will receive the token and attempt to decode it.  If it can successfully decode the token, it will retrieve the associated user from the database and send it back to the client as the response, otherwise it will send an error message.  
-This is the sample code for the App component: <br/>
+This is the sample code for the App component: 
 
 ```jsx
+
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import {connect} from 'react-redux';
@@ -320,9 +324,10 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(null, mapDispatchToProps)(App);
+
 ```
 
-Here is the sample code for the `getProfile` thunk in userActions.js: <br/>
+Here is the sample code for the `getProfile` thunk in userActions.js:
 
 ```js
 export const getProfile = () => {
@@ -349,6 +354,7 @@ export const getProfile = () => {
     }
   }
 }
+
 ```
 
 As we see above, if the server returns an error message, we will want to remove the invalid token from the locale storage. If a valid user is returned, we will dispatch the LOGIN_USER action to the user reducer  that will set up the current user in our Redux store.
@@ -358,9 +364,10 @@ At this point, We should have a fully functioning authentication system. Give yo
 
 We can create a button that gives the users the ability to logout and terminate their session. That button should be placed somewhere easily accessible to the user. Thus, the best place to house our logout button will be in our navigation bar/ header.
 
-A simple code implementation could be as follow: <br/>
+A simple code implementation could be as follow:
 
 ```jsx
+
 import React, { Component } from 'react';
 import {logoutUser } from './actions/userActions';
 import { Link } from 'react-router-dom'
@@ -402,6 +409,7 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Nav);
+
 ```
 
 In the above code, the navbar displays different features depending on whether there’s a current user logged in or not. If there’s a current user, the logout button will be displayed; otherwise the login and sign up buttons are displayed.
@@ -411,13 +419,16 @@ Once the user clicks on the logout button, it will trigger the token to be remov
 Here is the code for the `logoutUser` action creator function in userActions.js:
 
 ```js
+
 export const logoutUser = () => ({
   type: 'LOGOUT_USER'
 })
+
 ```
-Here is the updated user reducer: <br/>
+Here is the updated user reducer:
 
 ```js
+
 const initialState = {
   all: [],
   currentUser: {},
@@ -438,6 +449,7 @@ export default function userReducer(state = initialState, action) {
         return state;
     }
   }
+
 ```
 
 This is it for the basic implementation of JWT in  React & Redux.  Please read  more about JWT and other approaches  <a href='https://jwt.io/introduction/'>here</a>.
