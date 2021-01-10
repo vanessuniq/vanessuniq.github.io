@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Simple Fullstack CRUD App With Rails, React &Redux Part 2"
-date:       2021-01-10 08:39:04 +0000
+date:       2021-01-10 03:39:05 -0500
 permalink:  simple_fullstack_crud_app_with_rails_react_and_redux_part_2
 ---
 
