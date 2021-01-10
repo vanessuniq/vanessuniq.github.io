@@ -125,8 +125,10 @@ const mapDispatchToProps = dispatch => ({
 export default connect(null, mapDispatchToProps)(Signup);
  
 ```
+
 The imported `register` function from userActions.js is the redux thunk that uses fetch to send a POST request to our Rails register endpoint at http://localhost:3000/api/v1/users. Upon form submission, the signup component dispatches the register action; thus the use of `mapDispatchToProps`.
 The register function is define below:
+
 ```js
 export const register = user => {
   return dispatch => {
@@ -155,16 +157,20 @@ const loginUser = userObj => ({
     payload: userObj
 })
 ```
+
 When Redux Promise resolves the Promise in our register function, the expected response is either a json object containing the user and the token  if the user creation was successful or an error object if not.
 
 Successful user creation:
+
 ```ruby
 render json: {user: UserSerializer.new(user), jwt: token}
 ```
+
 Upon success, we store the jwt in the browser’s local storage for the session to persist using the `setItem` method, then we dispatch the login user action to the user reducer, passing the user object as the payload to be saved in the Redux store.
 
 Here is a sample of the user reducer handling the dispatch of the `LOGIN_USER` action
 userReducer.js
+
 ```js
 const initialState = {
   all: [],
@@ -189,7 +195,7 @@ When handling the LOGIN_USER action, the reducer first checks if the user alread
 
 <p style="color:brown ">Note: In our case, we are automatically logging in the user after registering. We can also opt out and require the use to login after registration by using flash messaging and redirecting the user to the login page after successful registration.<p>
 
-2. **User Login**
+**2. User Login**
 
 User login and signup have similar functionalities. Here is the sample from the Login component:
 
@@ -249,6 +255,7 @@ const mapDispatchToProps = dispatch => ({
 
 export default connect(null, mapDispatchToProps)(Login);
 ```
+
 Here, the user submits the his/her login credentials by submitting the form. The submission event triggers the dispatch of the `login thunk` that will send a post request to the server (/api/v1/login endpoint). The server will then authenticate the user credentials and generate a JWT if validated, then send an object containing the JWT and user back to the client as seen in the sign up process. As seen before, the JWT will be stored in the browser local storage and the `LOGIN_USER` action will be dispatched to the user reducer to set the current user in the Redux store.
 
 Here is the code for the login thunk in userActions.js:
@@ -277,7 +284,7 @@ export const login = user => {
 }
 ```
 
-3. **User Auto Login**
+**3. User Auto Login**
 
 We set up the locale storage to persist a user session for when he/she revisits the page and wants to submit authorized requests to the server. So it is logical to try to auto login the user once the app loads and everytime it is accessed. To do so, we will dispatch the getProfile thunk  in the `componentDidMount` method of our App component. Once dispatched, the `getProfile` thunk will first check if there’s an existing token stored in the locale storage. If the token is present, it will run `fetch` sending a get request to the server (/api/v1/auto_login  endpoint) with an <p style="color:brown ">Authorization header</p> carrying the token. The Rails server will receive the token and attempt to decode it.  If it can successfully decode the token, it will retrieve the associated user from the database and send it back to the client as the response, otherwise it will send an error message.  
 This is the sample code for the App component: 
@@ -343,10 +350,11 @@ export const getProfile = () => {
   }
 }
 ```
+
 As we see above, if the server returns an error message, we will want to remove the invalid token from the locale storage. If a valid user is returned, we will dispatch the LOGIN_USER action to the user reducer  that will set up the current user in our Redux store.
 At this point, We should have a fully functioning authentication system. Give yourself a Have five if you made it this far.  Don’t forget you can track the Redux state and actions using the Redux DevTools if installed in your chrome browser.
 
-4. **User Logout**
+**4. User Logout**
 
 We can create a button that gives the users the ability to logout and terminate their session. That button should be placed somewhere easily accessible to the user. Thus, the best place to house our logout button will be in our navigation bar/ header.
 
@@ -395,6 +403,7 @@ const mapDispatchToProps = dispatch => ({
 
 export default connect(mapStateToProps, mapDispatchToProps)(Nav);
 ```
+
 In the above code, the navbar displays different features depending on whether there’s a current user logged in or not. If there’s a current user, the logout button will be displayed; otherwise the login and sign up buttons are displayed.
 `mapStateToProps` is  being used in order for the Nav component to receive a prop called currentUser from the store.
 Once the user clicks on the logout button, it will trigger the token to be removed from the local storage, and the LOGOUT_USER action to be dispatched to the user reducer, which will set the global state current user to an empty object.
@@ -430,6 +439,7 @@ export default function userReducer(state = initialState, action) {
     }
   }
 ```
+
 This is it for the basic implementation of JWT in  React & Redux.  Please read  more about JWT and other approaches  <a href='https://jwt.io/introduction/'>here</a>.
 
 In the last part of this guide (part 3), we will cover how to create, read , update and delete a question and how that process is synced between the back end and the front end.
