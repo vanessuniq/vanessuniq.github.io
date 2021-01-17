@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Self Introduction To Data Structures and Algorithms"
-date:       2021-01-17 23:25:00 +0000
+date:       2021-01-17 18:25:01 -0500
 permalink:  self_introduction_to_data_structures_and_algorithms
 ---
 
@@ -16,7 +16,7 @@ As I am diving into those topics and learning the fundamentals, I will be making
 
 ## Data Structures
 <br/>
-These are the building blocks of any programs. Thus, it is important to understand how the most common data structures work, the complexity of their operations and how to implement them. The most common structures I’ll go over include** Arrays, Linked Lists, Stacks, Queues, Hash Maps, Graph and Trees and Heaps**.  <br/>
+These are the building blocks of any programs. Thus, it is important to understand how the most common data structures work, the complexity of their operations and how to implement them. The most common structures I’ll go over include **Arrays, Linked Lists, Stacks, Queues, Hash Maps, Graph and Trees and Heaps**.  <br/>
 
 ## Algorithms 
 <br/>
