@@ -43,13 +43,13 @@ Looking at another example, checking what time of the day:
 ```js
 
 const checkTime = num => {
-    if(num < 12) {
-		    return 'Morning'
-		} else if(num>= 12 && num < 18) {
-		    return 'Afternoon'
-		} else {
-		    return 'Evening'
-		}
+	if(num < 12) {
+		return 'Morning'
+	} else if(num>= 12 && num < 18) {
+		return 'Afternoon'
+	} else {
+		return 'Evening'
+	}
 }
 ```
 
@@ -79,11 +79,11 @@ Well, our first instinct might be the so called **brute force** approach, which 
 ```js
 
 const bruteSearch = (array, num) => {
-    for(let i = 0; i < array.length; i++) {
-		    if(array[i] === num) {
-				    return `The position of ${num} in the list is ${i}`;
-				}
+	for(let i = 0; i < array.length; i++) {
+		if(array[i] === num) {
+			return `The position of ${num} in the list is ${i}`;
 		}
+	}
 }
 
 ```
