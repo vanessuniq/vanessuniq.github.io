@@ -100,7 +100,7 @@ const binarySearch = (array, num) => {
         let pivot = Math.floor((startIndex + endIndex)/2);
         if (array[pivot] === num){
             return `The position of ${num} in the list is ${pivot}`;
-				} else if (array[pivot] < num){
+	} else if (array[pivot] < num){
             startIndex = pivot + 1;
         } else {
             endIndex = pivot - 1;
