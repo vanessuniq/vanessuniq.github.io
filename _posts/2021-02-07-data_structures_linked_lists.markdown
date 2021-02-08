@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Data Structures: Linked Lists"
-date:       2021-02-08 04:54:00 +0000
+date:       2021-02-07 23:54:00 -0500
 permalink:  data_structures_linked_lists
 ---
 
@@ -38,7 +38,7 @@ We will be implementing how to create a list as well as the common linked list o
 
 ```js
 
-/Let's start by constructing the node using JS Class
+//Let's start by constructing the node using JS Class
 class Node {
     constructor(data) {
         this.data = data;
