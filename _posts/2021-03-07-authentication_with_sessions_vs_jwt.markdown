@@ -47,10 +47,10 @@ class SessionsController < ApplicationController
     end
 
     def create
-		 user = User.find_by(email: params[:email]
-		 if user
-			 session[:id] = user.id
-		end
+    	user = User.find_by(email: params[:email]
+	if user
+	  session[:id] = user.id
+	end
         redirect_to '/'
     end
 		
