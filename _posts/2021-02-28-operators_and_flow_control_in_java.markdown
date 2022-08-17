@@ -267,7 +267,7 @@ Sum = 89. Enter a number to add to Sum: -20
 The sum of all positive number you entered is 89
 ```
 
-That's all for this post. Now take time to digest what you've learned and do not hesitate to leave a feedback.
+That's all for this post, you can learn more about Control Flow Statements in Java [here](https://www.scaler.com/topics/java/control-flow-statements-in-java/). Now take time to digest what you've learned and do not hesitate to leave a feedback.
 
 Until next time,
 
